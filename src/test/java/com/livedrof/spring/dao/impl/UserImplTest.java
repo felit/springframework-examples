@@ -1,6 +1,8 @@
 package com.livedrof.spring.dao.impl;
 
+import com.livedrof.spring.aop.SpringAspect;
 import com.livedrof.spring.dao.IUser;
+import com.livedrof.spring.dto.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,6 +27,6 @@ public class UserImplTest {
 
     @Test
     public void saveUser() {
-        System.out.println(user);
+        user.saveUser(new User());
     }
 }
