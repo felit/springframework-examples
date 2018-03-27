@@ -6,7 +6,13 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 
-public class Bean2 implements BeanNameAware, BeanFactoryAware, DisposableBean {
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+/**
+ * TODO Bean的生命周期，及相应的扩展点。
+ */
+public class LifeCycleBean implements BeanNameAware, BeanFactoryAware, DisposableBean {
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
 
     }
@@ -16,6 +22,16 @@ public class Bean2 implements BeanNameAware, BeanFactoryAware, DisposableBean {
     }
 
     public void destroy() throws Exception {
+
+    }
+
+    @PostConstruct
+    public void initMethod() {
+
+    }
+
+    @PreDestroy
+    public void beanDestroy() {
 
     }
 }
