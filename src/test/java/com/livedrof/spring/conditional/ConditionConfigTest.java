@@ -1,23 +1,19 @@
-package com.livedrof.spring.event;
+package com.livedrof.spring.conditional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-/**
- * TODO Spring提供的Bean有哪些？ Spring自带的事件有哪些？TODO 有序事件
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
-public class ListenerTest {
+public class ConditionConfigTest {
     @Autowired
-    private ApplicationContext applicationContext;
+    MagicBean magicBean;
 
     @Test
-    public void testPublishEvent() {
-        applicationContext.publishEvent(new ContentEvent("news is  update"));
+    public void test() {
+        System.out.println(magicBean);
     }
 }
